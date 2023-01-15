@@ -1,11 +1,14 @@
 # Ixian Seeder
-The Ixian Seeder ...
+
+Ixian Seeder is a lite weight Ixian seed node service, which connects to the Ixian DLT network, collects information about other nodes and provides this information to new clients.
+
+It is intended to be used for seed nodes.
 
 
 ## Development branches
 
 There are two main development branches:
-* **master**: This branch is used to build the binaries for the latest stable release of Ixian S2. It should change slowly and be quite well-tested. This is also the default branch for anyone who wishes to build their Ixian software from source.
+* **master**: This branch is used to build the binaries for the latest stable release of Ixian Seeder. It should change slowly and be quite well-tested. This is also the default branch for anyone who wishes to build their Ixian software from source.
 * **development**: This is the main development branch. The branch might not always be kept bug-free, if an extensive new feature is being worked on. If you are simply looking to build a current binary yourself, please use one of the release tags which will be associated with the master branch.
 
 ## Documentation
