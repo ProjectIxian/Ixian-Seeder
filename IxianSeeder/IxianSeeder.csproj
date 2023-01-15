@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>IxianSeeder</RootNamespace>
+    <AssemblyName>IxianSeeder</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IxianDLT.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentCommandLineParser" Version="1.4.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Open.Nat" Version="2.1.0" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="1.1.14" />
+    <PackageReference Include="SQLitePCLRaw.core" Version="1.1.14" />
+    <PackageReference Include="SQLitePCLRaw.lib.e_sqlite3.linux" Version="1.1.14" />
+    <PackageReference Include="SQLitePCLRaw.lib.e_sqlite3.osx" Version="1.1.14" />
+    <PackageReference Include="SQLitePCLRaw.lib.e_sqlite3.v110_xp" Version="1.1.14" />
+    <PackageReference Include="SQLitePCLRaw.provider.e_sqlite3.netstandard11" Version="1.1.14" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="7.0.0" />
+  </ItemGroup>
+  <Import Project="..\..\Ixian-Core\IXICore.projitems" Label="Shared" />
+  <Target Name="CopyHTMLToOutput" AfterTargets="CoreCompile">
+    <ItemGroup>
+      <IXIPB1 Include="$(SolutionDir)\..\Ixian-Core\html\*.*" />
+    </ItemGroup>
+    <ItemGroup>
+      <IXIPB2 Include="$(SolutionDir)\..\Ixian-Core\html\img\*.*" />
+    </ItemGroup>
+    <ItemGroup>
+      <IXIPB3 Include="$(SolutionDir)\..\Ixian-Core\html\css\*.*" />
+    </ItemGroup>
+    <ItemGroup>
+      <IXIPB4 Include="$(SolutionDir)\..\Ixian-Core\html\js\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(IXIPB1)" DestinationFolder="$(OutputPath)\html" ContinueOnError="true" />
+    <Copy SourceFiles="@(IXIPB2)" DestinationFolder="$(OutputPath)\html\img" ContinueOnError="true" />
+    <Copy SourceFiles="@(IXIPB3)" DestinationFolder="$(OutputPath)\html\css" ContinueOnError="true" />
+    <Copy SourceFiles="@(IXIPB4)" DestinationFolder="$(OutputPath)\html\js" ContinueOnError="true" />
+  </Target>
+</Project>
