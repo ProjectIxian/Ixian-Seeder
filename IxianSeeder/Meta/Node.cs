@@ -46,7 +46,7 @@ namespace IxianSeeder.Meta
 
         public Node()
         {
-            CoreConfig.maximumServerMasterNodes = Config.maxIncomingMasterNodes;
+            CoreConfig.maximumServerMasterNodes = 0;
             CoreConfig.maximumServerClients = Config.maxIncomingClientNodes;
             CoreConfig.simultaneousConnectedNeighbors = Config.maxOutgoingConnections;
 

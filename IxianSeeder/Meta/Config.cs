@@ -42,8 +42,6 @@ namespace IxianSeeder.Meta
 
         public static int maxOutgoingConnections = 6;
 
-        public static int maxIncomingMasterNodes = 0;
-
         public static int maxIncomingClientNodes = 2000;
 
         public static bool enableActivity = false;
@@ -72,7 +70,7 @@ namespace IxianSeeder.Meta
             Console.WriteLine("Starts a new instance of Ixian Seeder Node");
             Console.WriteLine("");
             Console.WriteLine(" IxianSeeder.exe [-h] [-v] [-t] [-x] [-c] [-p 10234] [-a 8081] [-i ip] [-w ixian.wal] [-n seed1.ixian.io:10234]");
-            Console.WriteLine(" [--config ixian.cfg] [--maxLogSize 50] [--maxLogCount 10] [--maxOutgoingConnections] [--maxIncomingMasterNodes]");
+            Console.WriteLine(" [--config ixian.cfg] [--maxLogSize 50] [--maxLogCount 10] [--maxOutgoingConnections]");
             Console.WriteLine(" [--maxIncomingClientNodes] [--walletPassword]");
             Console.WriteLine("");
             Console.WriteLine("    -h\t\t\t Displays this help");
@@ -90,7 +88,6 @@ namespace IxianSeeder.Meta
             Console.WriteLine("    --maxLogCount\t Specify maximum number of log files");
             Console.WriteLine("    --logVerbosity\t Sets log verbosity (0 = none, trace = 1, info = 2, warn = 4, error = 8)");
             Console.WriteLine("    --maxOutgoingConnections\t Max outgoing connections.");
-            Console.WriteLine("    --maxIncomingMasterNodes\t Max incoming masternode connections.");
             Console.WriteLine("    --maxIncomingClientNodes\t Max incoming client connections.");
             Console.WriteLine("    --walletPassword\t Specify the password for the wallet.");
             Console.WriteLine("    --enableActivity\t Enables activity/incoming tx processing.");
@@ -285,8 +282,6 @@ namespace IxianSeeder.Meta
             cmd_parser.Setup<bool>("onlyShowAddresses").Callback(value => onlyShowAddresses = true).Required();
 
             cmd_parser.Setup<int>("maxOutgoingConnections").Callback(value => maxOutgoingConnections = value);
-
-            cmd_parser.Setup<int>("maxIncomingMasterNodes").Callback(value => maxIncomingMasterNodes = value);
 
             cmd_parser.Setup<int>("maxIncomingClientNodes").Callback(value => maxIncomingClientNodes = value);
 

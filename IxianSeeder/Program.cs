@@ -202,7 +202,7 @@ namespace IxianSeeder
             Logging.flush();
 
             // Check for the right vc++ redist for the argon miner
-            // Ignore if we're on Mono
+            // Ignore if we're not on Windows
             if (Platform.onWindows())
             {
                 checkVCRedist();
