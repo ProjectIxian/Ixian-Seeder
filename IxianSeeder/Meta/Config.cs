@@ -50,9 +50,9 @@ namespace IxianSeeder.Meta
         public static string externalIp = "";
 
         // Read-only values
-        public static readonly string version = "xseedc-0.9.1"; // Seeder Node version
+        public static readonly string version = "xseedc-0.9.3"; // Seeder Node version
 
-        public static readonly string checkVersionUrl = "https://www.ixian.io/s2-update.txt";
+        public static readonly string checkVersionUrl = "https://www.ixian.io/seeder-update.txt";
         public static readonly int checkVersionSeconds = 6 * 60 * 60; // 6 hours
 
         // internal
