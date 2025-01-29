@@ -554,7 +554,7 @@ namespace IxianSeeder.Meta
             return BlockHeaderStorage.getBlockHeader(blockNum);
         }
 
-        public override IxiNumber getMinSignerPowDifficulty(ulong blockNum, long curBlockTimestamp)
+        public override IxiNumber getMinSignerPowDifficulty(ulong blockNum, int curBlockVersion, long curBlockTimestamp)
         {
             // TODO TODO implement this properly
             return ConsensusConfig.minBlockSignerPowDifficulty;
